@@ -158,10 +158,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                 Date date = formatter.parse(s.split("T")[0]);
                 if(!dateHashMap.containsKey(date)){
                    String[] value= new String[2];
-                    value[0]=weather.getData().getWeather().get(i);
+                    value[0]="T: "+weather.getData().getTemperature().get(i)+" \n"+weather.getData().getWeather().get(i);
                  dateHashMap.put(date,value);
                 }else {
-                 dateHashMap.get(date)[1]=weather.getData().getWeather().get(i);
+                 dateHashMap.get(date)[1]="T: "+weather.getData().getTemperature().get(i)+" \n"+weather.getData().getWeather().get(i);
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
